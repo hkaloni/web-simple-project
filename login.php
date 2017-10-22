@@ -64,7 +64,7 @@
           <div class="signin-form-inside">
             <form name="sign-in" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
               <input type="text" name="uname" placeholder="user name" required="required"><br/><br/>
-              <input type="password" name="pass" placeholder="password" required="required"><br/><br/>
+              <input type="password" name="pass" placeholder="password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
               <input type="submit" name="submit" value="User">
               <input type="submit" name="submit" value="Provider">
             </from>

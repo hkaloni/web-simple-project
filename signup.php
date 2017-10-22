@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       $lname = $_POST["lname"];
       $email = $_POST["email"];
       $pass = $_POST["password"];
-      $phone = $_POST["contact"];
+      $phone = $_POST["pnumber"];
 
       $query = "INSERT INTO users (uname,fname,lname,email,pass,contact) VALUES ('$uname','$fname','$lname','$email','$pass','$phone')";
     }
@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
       $phone1 = $_POST["contact1"];
       $phone2 = $_POST["contact2"];
 
-      $query = "INSERT INTO providers (name,uname,email,pass,contact1,contact2) VALUES ('$name','$uname','$email','$pass','$phone1','$phone2')";
+      $query = "INSERT INTO providers (name,pname,email,pass,contact1,contact2) VALUES ('$name','$uname','$email','$pass','$phone1','$phone2')";
     }
 
     mysqli_query($dbc,$query)
@@ -104,8 +104,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   					<input type="text" name="lname" placeholder="Last Name" required="required"><br/><br/>
   					<input type="text" name="uname" placeholder="User Name" required="required"><br/><br/>
             <input type="email" name="email" placeholder="email id" required="required"><br/><br/>
-            <input type="password" name="password" placeholder="Password" required="required" pattern=".{8,}" title="Minimum 8 characters"><br/><br/>
-            <input type="password" name="password2" placeholder="Rewrite Password" required="required" pattern=".{8,}" title="Minimum 8 characters"><br/><br/>
+            <input type="password" name="password" placeholder="Password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
+            <input type="password" name="password2" placeholder="Rewrite Password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
             <input type="number" name="pnumber" maxlength="10" placeholder="e.g. 9876543210" required="required"><br/><br/>
   					<input type="submit" name="submit" value="Sign Up" onclick="return validate()">
   				</form>
@@ -122,8 +122,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   					<input type="text" name="name" placeholder="Company Name" required="required"><br/><br/>
   					<input type="text" name="uname" placeholder="User Name" required="required"><br/><br/>
             <input type="email" name="email" placeholder="email id" required="required"><br/><br/>
-            <input type="password" name="password" placeholder="Password" required="required" pattern=".{8,}" title="Minimum 8 characters"><br/><br/>
-            <input type="password" name="password2" placeholder="Rewrite Password" required="required" pattern=".{8,}" title="Minimum 8 characters"><br/><br/>
+            <input type="password" name="password" placeholder="Password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
+            <input type="password" name="password2" placeholder="Rewrite Password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
             <input type="number" name="contact1" maxlength="10" placeholder="e.g. 9876543210" required="required"><br/><br/>
             <input type="number" name="contact2" maxlength="10" placeholder="e.g. 9876543210"><br/><br/>
   					<input type="submit" name="submit" value="Sign Up">

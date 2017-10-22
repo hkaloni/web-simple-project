@@ -34,3 +34,24 @@ function calcualteAmount(){
   }
   document.getElementById('fprice').value = fprice;
 }
+
+function validate() {
+  var fdate=document.forms["confirm"]["eventdate"].value;
+  var sdate = new Date();
+  var fyear=fdate.substr(0,4);
+  var fmonth=fdate.substr(5,2);
+  var fdateOnly=fdate.substr(8,2);
+  if(fyear < sdate.getFullYear()){
+        alert("Previous date");
+        return false;
+  }
+  else if(fyear == sdate.getFullYear() && fmonth < sdate.getMonth()){
+      alert("Previous date");
+      return false;
+  }
+  else if(fyear == sdate.getFullYear() && fmonth == sdate.getMonth() && fdateOnly<=sdate.getDate()){
+      alert("Previous Date");
+      return false;
+  }
+    return true;
+}
