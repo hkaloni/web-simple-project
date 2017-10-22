@@ -1,0 +1,9 @@
+CREATE TABLE providers
+(
+    name text,
+    uname varchar(20) PRIMARY KEY,
+    email varchar(30),
+    pass varchar(20),
+    contact1 bigint,
+    contact2 bigint
+);

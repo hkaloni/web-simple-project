@@ -1,0 +1,38 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #d9d9d9;
+}
+
+div.info-block-main{
+  position: relative;
+  top: 10%;
+  display: block;
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #808080;
+}
+div.info-block-main-sub{
+  background-color: #e6e6e6;
+}
+div.info-block-name{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 2%;
+  padding: 5px;
+}
+div.info-block-main-sub-inside{
+  margin: 2%;
+  margin-left: 5%;
+  padding: 5px;
+}
+div.book{
+  float: right;
+  margin-top: -6%;
+  margin-right: 3%;
+}
+span{
+  font-weight: bold;;
+}

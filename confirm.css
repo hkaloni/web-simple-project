@@ -1,0 +1,19 @@
+span{
+  font-weight: bold;
+}
+div.confirm-main{
+  position: relative;
+  width: 50%;
+  margin: auto;
+  top: 10%;
+}
+div.confirm-main-sub{
+  width: 50%;
+  margin: auto;
+}
+input{
+  width: 70%;
+}
+input[type="submit"], input[type="button"]{
+  width: 35%;
+}

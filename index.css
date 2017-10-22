@@ -1,0 +1,84 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.parallax1 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.parallax1 {
+  background-image: url("images/1.jpg");
+  min-height: 100%;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top:35%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.caption span.border-above{
+  letter-spacing: 10PX;
+  padding: 10px;
+}
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+.caption2{
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.captionGuest{
+  position: relative;
+  color: white;
+  background-color: #111;
+  font-size: 30px;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: white;
+}
+li {
+    float: right;
+    font-size: 20px;
+}
+li.ino {
+  float: left;
+  letter-spacing: 6px;
+}
+li a,li.ino {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+li a:hover:not(.active) {
+    background-color: #4CAF50;
+}
