@@ -1,8 +1,0 @@
-CREATE TABLE users (
-    uname varchar(20) PRIMARY KEY,
-    fname varchar(20),
-    lname varchar(20),
-    email varchar(30),
-    pass varchar(20),
-    number numeric(10)
-);
