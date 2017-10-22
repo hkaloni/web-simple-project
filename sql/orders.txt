@@ -1,0 +1,11 @@
+CREATE TABLE orders
+(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    uname varchar(20),
+    pname varchar(20),
+    type tinytext,
+    service tinytext,
+    eventdate date,
+    duration int,
+    FOREIGN KEY (uname) REFERENCES users(uname)
+);

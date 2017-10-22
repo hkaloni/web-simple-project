@@ -1,0 +1,15 @@
+CREATE TABLE cart
+(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    uname varchar(20),
+    pname varchar(20),
+    type tinytext,
+    service tinytext,
+    eventdate date,
+    duration int,
+    FOREIGN KEY (uname) REFERENCES users(uname)
+);
+ALTER TABLE cart ADD COLUMN amount int;
+ALTER TABLE cart ADD COLUMN confirmed int;
+ALTER TABLE cart ADD dishes int AFTER duration;
+ALTER TABLE cart ADD area int AFTER dishes;
