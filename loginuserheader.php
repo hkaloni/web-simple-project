@@ -14,6 +14,7 @@
     else {
       ?>
       <li><a href="login.php" class="link-color">Login</a></li>
+      <li><a href="signup.php" class="link-color">Login</a></li>
       <?php
     }
      ?>

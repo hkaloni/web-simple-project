@@ -14,8 +14,8 @@
     $type1 = 'User';
     $type2 = 'Provider';
 
-    $dbc = mysqli_connect(db_host,db_user,"",db_name);
-//      or die("No connect");
+    $dbc = mysqli_connect(db_host,db_user,"",db_name)
+      or die("No connect");
       if ($type == $type1) {
         $query = "SELECT * FROM users WHERE uname = '$uname' AND pass = '$pass'";
         $users = 1;
@@ -25,8 +25,8 @@
         $users = 0;
       }
 
-      $result = mysqli_query($dbc,$query);
-    //   or die("Query Error");
+      $result = mysqli_query($dbc,$query)
+       or die("Query Error");
       if(mysqli_num_rows($result) == 1){
         if ($users == 1) {
           $_SESSION["uname"] = $uname;
@@ -60,14 +60,17 @@
               <li class="ino">inovatiQ</li>
           </ul>
         </header>
-        <div class="signin-form">
-          <div class="signin-form-inside">
-            <form name="sign-in" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-              <input type="text" name="uname" placeholder="user name" required="required"><br/><br/>
-              <input type="password" name="pass" placeholder="password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
-              <input type="submit" name="submit" value="User">
-              <input type="submit" name="submit" value="Provider">
-            </from>
+        <div class="login">
+          <span>Welcome Back!</span>
+          <div class="signin-form">
+            <div class="signin-form-inside">
+              <form name="sign-in" method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+                <input type="text" name="uname" placeholder="user name" required="required"><br/><br/>
+                <input type="password" name="pass" placeholder="password" required="required" pattern=".{4,}" title="Minimum 4 characters"><br/><br/>
+                <input type="submit" name="submit" value="User">
+                <input type="submit" name="submit" value="Provider">
+              </from>
+            </div>
           </div>
         </div>
     </body>

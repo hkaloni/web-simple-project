@@ -19,23 +19,63 @@
       $type1 = 'venue';
       $eventdate = $_POST["eventdate"];
       $finalprice = $_POST["finalprice"];
+      $flag = 1;
 
-      $query = "SELECT * FROM $type WHERE id=$id";
-      $result = mysqli_query($dbc,$query)
-                or die("No query");
-      $row = mysqli_fetch_array($result);
-
-      $pname = $row['pname'];
-      $service = $row['name'];
-      if ($type == $type1) {
-        $duration = $_POST["duration"];
-        $query = "INSERT INTO cart (uname,pname,type,service,eventdate,duration,amount,confirmed) VALUES ('$uname','$pname','$type','$service','$eventdate','$duration','$finalprice',0)";
+      $query1 = "SELECT * FROM cart WHERE vdcid=$id AND type='$type' AND confirmed=1";
+      $result1 = mysqli_query($dbc,$query1)
+        or die("No Query");
+      if(mysqli_num_rows($result1) > 0) {
+        while ($row1 = mysqli_fetch_array($result1)) {
+          if ($eventdate == $row1['eventdate']) {
+            $flag = 0;
+            ?>
+            <script>
+              alert("Date Not Available");
+            </script>
+            <?php
+              if ($type == 'venue') {
+                ?>
+                <script>
+                  window.location="venue.php";
+                </script>
+                <?php
+              }
+              elseif ($type == 'caterer') {
+                ?>
+                <script>
+                  window.location="caterer.php";
+                </script>
+                <?php
+              }
+              elseif ($type == 'decorator') {
+                ?>
+                <script>
+                  window.location="decorator.php";
+                </script>
+                <?php
+              }
+          }
+        }
       }
-      else {
-        $query = "INSERT INTO cart (uname,pname,type,service,eventdate,amount,confirmed) VALUES ('$uname','$pname','$type','$service','$eventdate','$finalprice',0)";
-      }
+      if ($flag == 0){
+        $query = "SELECT * FROM $type WHERE id=$id";
+        $result = mysqli_query($dbc,$query)
+                  or die("No query");
+        $row = mysqli_fetch_array($result);
 
-      mysqli_query($dbc,$query);
+        $pname = $row['pname'];
+        $service = $row['name'];
+        if ($type == $type1) {
+          $duration = $_POST["duration"];
+          $query = "INSERT INTO cart (vdcid,uname,pname,type,service,eventdate,duration,amount,confirmed) VALUES ('$id','$uname','$pname','$type','$service','$eventdate','$duration','$finalprice',0)";
+        }
+        else {
+          $query = "INSERT INTO cart (vdcid,uname,pname,type,service,eventdate,amount,confirmed) VALUES ('$id','$uname','$pname','$type','$service','$eventdate','$finalprice',0)";
+        }
+
+        mysqli_query($dbc,$query)
+          or die("query error");
+      }
     }
 
       $query = "SELECT * FROM cart WHERE uname='$uname' AND confirmed=0"

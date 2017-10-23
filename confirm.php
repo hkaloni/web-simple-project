@@ -72,5 +72,5 @@
         <?php
       }
     ?>
-  <!-- </body>
-</html> -->
+  </body>
+</html>

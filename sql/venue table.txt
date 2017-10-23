@@ -6,6 +6,6 @@ CREATE TABLE venue(
     contact1 bigint,
     contact2 bigint
 );
-ALTER TABLE venue ADD COLUMN uname varchar(20) AFTER id;
-ALTER TABLE venue ADD FOREIGN KEY (uname) REFERENCES providers(uname);
+ALTER TABLE venue ADD COLUMN pname varchar(20) AFTER id;
+ALTER TABLE venue ADD FOREIGN KEY (pname) REFERENCES providers(pname);
 ALTER TABLE venue ADD COLUMN price int AFTER landmark;

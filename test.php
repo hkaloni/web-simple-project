@@ -118,3 +118,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              </div>
         </body>
         </html>
+
+
+
+
+        $query1 = "SELECT * FROM cart WHERE vdcid=$id AND type='$type' AND confirmed=1";
+        $result1 = mysqli_query($dbc,$query1)
+          or die("No Query");
+        if(mysqli_num_rows($result1) > 0) {
+          while ($row1 = mysqli_fetch_array($result1)) {
+            if ($eventdate == $row1['eventdate']) {
+              ?>
+              <script>
+                alert("Date Not Available");
+              </script>
+              <?php
+                if ($type == 'venue') {
+                  ?>
+                  <script>
+                    window.location="venue.php";
+                  </script>
+                  <?php
+                }
+                elseif ($type == 'caterer') {
+                  ?>
+                  <script>
+                    window.location="caterer.php";
+                  </script>
+                  <?php
+                }
+                elseif ($type == 'decorator') {
+                  ?>
+                  <script>
+                    window.location="decorator.php";
+                  </script>
+                  <?php
+                }
+            }
+          }
+        }

@@ -11,6 +11,7 @@ header{
   padding: 0;
   background-color: #333;
   color: white;
+  box-shadow: 5px grey;
 }
 header ul{
   list-style-type: none;

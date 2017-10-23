@@ -79,6 +79,6 @@ li a,li.ino {
     text-align: center;
     padding: 14px 16px;
 }
-li a:hover:not(.active) {
+li a:hover:not(.active),span.captionGuest:hover:not(.active) {
     background-color: #4CAF50;
 }

@@ -13,3 +13,4 @@ ALTER TABLE cart ADD COLUMN amount int;
 ALTER TABLE cart ADD COLUMN confirmed int;
 ALTER TABLE cart ADD dishes int AFTER duration;
 ALTER TABLE cart ADD area int AFTER dishes;
+ALTER TABLE cart ADD vdcid int AFTER id;
